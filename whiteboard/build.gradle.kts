@@ -14,6 +14,10 @@ kotlin{
         val commonMain by getting{
             dependencies{
                 implementation(libs.kotlin.stdlib)
+                implementation(libs.compose.ui)
+                implementation(libs.compose.foundation)
+                implementation(libs.compose.runtime)
+                implementation(libs.skiko.common)
             }
         }
         val commonTest by getting{
@@ -27,6 +31,8 @@ kotlin{
             dependsOn(commonMain)
             dependencies{
                 implementation(libs.kotlin.stdlib)
+                implementation(libs.skiko.android)
+                api(libs.androidx.activity.compose)
             }
         }
         val androidUnitTest by getting{
@@ -42,6 +48,8 @@ kotlin{
             dependsOn(commonMain)
             dependencies{
                 implementation(libs.kotlin.stdlib)
+                implementation(compose.desktop.common)
+                implementation(libs.skiko.jvm)
             }
         }
         val desktopTest by getting{
